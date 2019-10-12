@@ -9,7 +9,7 @@
         android:background="@drawable/background">
 
     <ImageButton
-            android:layout_width="100dp"
+            android:layout_width="120dp"
             android:layout_height="40dp"
             android:background="@android:color/transparent"
             android:scaleType="fitXY"
@@ -23,7 +23,7 @@
     />
 
     <ImageButton
-            android:layout_width="100dp"
+            android:layout_width="120dp"
             android:layout_height="40dp"
             android:background="@android:color/transparent"
             android:scaleType="fitXY"
@@ -37,7 +37,7 @@
     />
 
     <ImageButton
-            android:layout_width="100dp"
+            android:layout_width="120dp"
             android:layout_height="40dp"
             android:background="@android:color/transparent"
             android:scaleType="fitXY"
@@ -51,7 +51,7 @@
     />
 
     <ImageButton
-            android:layout_width="100dp"
+            android:layout_width="120dp"
             android:layout_height="40dp"
             android:background="@android:color/transparent"
             android:scaleType="fitXY"
@@ -65,7 +65,7 @@
     />
 
     <ImageButton
-            android:layout_width="100dp"
+            android:layout_width="120dp"
             android:layout_height="40dp"
             android:background="@android:color/transparent"
             android:scaleType="fitXY"

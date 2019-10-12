@@ -1,59 +1,118 @@
 package m.schoolinapp
 
+import android.content.Intent
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
-import kotlin.math.round
 
 class Vocabulary : AppCompatActivity() {
-/*
-    var Images1 = arrayOf(R.drawable.award, R.drawable.apple, R.drawable.banana, R.drawable.bird, R.drawable.cat, R.drawable.cheesecake, R.drawable.cherries, R.drawable.computer,
-        R.drawable.cupcake, R.drawable.dog, R.drawable.fruits, R.drawable.glassofwater, R.drawable.herb, R.drawable.orange, R.drawable.pear, R.drawable.avocado, R.drawable.ball,
-        R.drawable.beetroot)
-    var Words1 = arrayOf("award", "apple","banana","bird", "cat", "cheesecake", "cherries", "computer", "cupcake", "dog", "fruits", "glass of water", "herb", "orange",
-        "pear", "avocado", "ball", "beetroot")
-    var Images2 = arrayOf(R.drawable.book, R.drawable.car, R.drawable.house, R.drawable.leaves, R.drawable.nest, R.drawable.pencil, R.drawable.penguin, R.drawable.pepper,
-        R.drawable.plants, R.drawable.potato, R.drawable.rocks, R.drawable.soup, R.drawable.star, R.drawable.tail, R.drawable.umbrella, R.drawable.vegetables,
-        R.drawable.watermelon, R.drawable.whiskers, R.drawable.eraser)
-    var Words2 = arrayOf("book", "car", "house", "leaves", "nest", "pencil", "penguin", "pepper", "plants", "potato", "rocks", "soup", "star",
-        "tail", "umbrella", "vegetables", "watermelon", "whiskers", "eraser")
-*/
-
-    var Images1 = arrayOf(R.drawable.apple, R.drawable.avocado, R.drawable.award, R.drawable.ball, R.drawable.banana, R.drawable.bird, R.drawable.book, R.drawable.car, R.drawable.cat,
-        R.drawable.cheesecake, R.drawable.cherries, R.drawable.computer, R.drawable.cupcake, R.drawable.dog, R.drawable.whiskers)
-
-    var Words1 = arrayOf("apple", "avocado", "award", "ball", "banana", "bird", "book", "car", "cat", "cheesecake", "cherries", "computer", "cupcake", "dog", "whiskers")
-
-    var Images2 = arrayOf(R.drawable.apple1, R.drawable.avocado1, R.drawable.award1, R.drawable.ball1, R.drawable.banana1, R.drawable.bird1, R.drawable.book1, R.drawable.car1,
-        R.drawable.cat1, R.drawable.cheesecake1, R.drawable.cherries1, R.drawable.computer1, R.drawable.cupcake1, R.drawable.dog1, R.drawable.whiskers1)
-
-    var Words2 = arrayOf("apple", "avocado", "award", "ball", "banana", "bird", "book", "car", "cat", "cheesecake", "cherries", "computer", "cupcake", "dog", "whiskers")
 
 
-    var Images = arrayOf(0)
-    var Words = arrayOf(" ")
+    var Words1EN = arrayOf("endangered", "species", "wild", "elephant", "leaves")
+    var Words1LT = arrayOf("nykstanti", "rūšys", "laukinis", "dramblys", "lapai")
+    var Words1PL = arrayOf("zagrożony", "gatunki", "dziki", "słoń", "liście")
+    var Words1TR = arrayOf("tehlike altında", "tür", "Vahşi", "fil", "Yaprak -ları")
+    var Words1AL = arrayOf("rrezikuara", "lloj", "i egër", "elefant", "lë")
 
+    var Words2EN = arrayOf("kitchen", "soup", "food", "beverages", "meat")
+    var Words2LT = arrayOf("virtuvė", "sriuba", "maistas", "gėrimai", "mėsa")
+    var Words2PL = arrayOf("kuchnia", "zupa", "jedzenie", "napoje", "mięso")
+    var Words2TR = arrayOf("mutfak", "Çorba", "yemek", "içkiler", "et")
+    var Words2AL = arrayOf("kuzhinë", "supë", "ushqim", "pije", "mish")
 
-    var clicked = -1
-    var shouldBeClicked = -2
+    var Words3EN = arrayOf("game", "dice", "ancient", "future", "country")
+    var Words3LT = arrayOf("žaidimas", "kauliukas", "senovinis", "ateitis", "šalis")
+    var Words3PL = arrayOf("gra", "kostka", "starożytny", "przyszłość", "kraj")
+    var Words3TR = arrayOf("oyun", "zar", "Çok eski", "gelecek", "ülke")
+    var Words3AL = arrayOf("loje", "kocke", "E vjeter", "ardhmeria", "shteti")
+
+    var Words4EN = arrayOf("shop", "street", "skyscraper", "city", "world")
+    var Words4LT = arrayOf("parduotuvė", "gatvė", "dangoraižis", "miestas", "pasaulis")
+    var Words4PL = arrayOf("sklep", "ulica", "wieżowiec", "miasto", "świat")
+    var Words4TR = arrayOf("dükkan", "sokak", "gökdelen", "şehir", "dünya")
+    var Words4AL = arrayOf("dyqan", "rrugë", "rrokaqiell", "qytet", "botë")
+
+    var Words5EN = arrayOf("cell phone", "conversation", "communicate", "quality", "invent")
+    var Words5LT = arrayOf("mobilus telefonas", "pokalbis", "bendrauti", "kokybė", "išrasti")
+    var Words5PL = arrayOf("telefon komórkowy", "konwersacji", "komunikowaćsię", "jakości", "wymyślić")
+    var Words5TR = arrayOf("cep telefonu", "konuşma", "iletişim kur", "kalite", "icat")
+    var Words5AL = arrayOf("celular", "bisedë", "komunikoj", "cilësi", "shpik")
+
+    var Words1 = Words1EN
+    var Words2 = Words2EN
+    var Words3 = Words3EN
+    var Words4 = Words4EN
+    var Words5 = Words5EN
+
+    var Words = Words1EN
+    var WordsEN = Words1EN
+
+    var WordOL = ""
+    var WordEN = ""
+    var WordsENrandom: Array<String> = arrayOf("")
+
+    var clicked = 0
+    var shouldBeClicked = 0
     var answered = 0.toDouble()
     var answers = 0.toDouble()
     var minScore = 80.toDouble()
     var score = 0.toDouble()
-    var i = 0
+    var i = WordsEN.size
+    var n: IntArray = (0..1).shuffled().toIntArray()
+    var m = 1
+    var index = (0..i-1).toList().toIntArray()
 
 
 
-    fun Initialize(){
+    fun Initialize() {
+        val lang = Language
+        when(lang.getLang()){
+            1 -> {
+                Words1 = Words1LT
+                Words2 = Words2LT
+                Words3 = Words3LT
+                Words4 = Words4LT
+                Words5 = Words5LT}
+            2 -> {
+                Words1 = Words1PL
+                Words2 = Words2PL
+                Words3 = Words3PL
+                Words4 = Words4PL
+                Words5 = Words5PL}
+            3 -> {
+                Words1 = Words1TR
+                Words2 = Words2TR
+                Words3 = Words3TR
+                Words4 = Words4TR
+                Words5 = Words5TR}
+            4 -> {
+                Words1 = Words1AL
+                Words2 = Words2AL
+                Words3 = Words3AL
+                Words4 = Words4AL
+                Words5 = Words5AL}
+        }
         val lvl = Level
         when(lvl.getLvl()){
-            1 ->{ Words = Words1; Images = Images1 }
-            2 ->{ Words = Words2; Images = Images2 }
+            1 ->{   Words = Words1
+                WordsEN = Words1EN}
+            2 ->{   Words = Words2
+                WordsEN = Words2EN}
+            3 ->{   Words = Words3
+                WordsEN = Words3EN}
+            4 ->{   Words = Words4
+                WordsEN = Words4EN}
+            5 ->{   Words = Words5
+                WordsEN = Words5EN}
         }
-        i = Images.size
+        i = WordsEN.size
+        index = (0..i-1).toList().toIntArray()
+
+        Word.setBackgroundResource(R.drawable.border)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -62,28 +121,24 @@ class Vocabulary : AppCompatActivity() {
     }
 
 
-    var imgButton1: ImageButton
+    var imgButton1: Button
         get() = findViewById(R.id.ButtonImage1)
         set(value) = TODO()
 
-    var imgButton2: ImageButton
+    var imgButton2: Button
         get() = findViewById(R.id.ButtonImage2)
         set(value) = TODO()
 
-    var imgButton3: ImageButton
+    var imgButton3: Button
         get() = findViewById(R.id.ButtonImage3)
         set(value) = TODO()
 
-    var imgButton4: ImageButton
+    var imgButton4: Button
         get() = findViewById(R.id.ButtonImage4)
         set(value) = TODO()
 
     var Word: TextView
         get() = findViewById(R.id.Word)
-        set(value) = TODO()
-
-    var Answer: TextView
-        get() = findViewById(R.id.Answer)
         set(value) = TODO()
 
     var NextButton: ImageButton
@@ -102,42 +157,13 @@ class Vocabulary : AppCompatActivity() {
         get() = findViewById(R.id.NextLevelWarning)
         set(value) = TODO()
 
-    var ScoreView: TextView
-        get() = findViewById(R.id.Score)
+    var back: ImageButton
+        get() = findViewById(R.id.backToLevels)
         set(value) = TODO()
 
-    fun ClickShuffle() {
-        val n = ((0..(i-1)).shuffled()).toIntArray()
-        val m = ((0..3).shuffled().first())
-        shouldBeClicked = m
-        imgButton1.setImageResource(Images[n[0]])
-        imgButton2.setImageResource(Images[n[1]])
-        imgButton3.setImageResource(Images[n[2]])
-        imgButton4.setImageResource(Images[n[3]])
-        Word.setText(Words[n[m]])
-    }
-
-    fun Click()
-    {
-        answers++
-        if(clicked == shouldBeClicked)
-        {
-            Answer.setText("Correct!")
-            TryAgainButton.visibility = View.GONE
-            NextButton.visibility = View.VISIBLE
-            answered++
-            if(answers >= 10 && score >= minScore)nextLevel()
-        }
-        else
-        {
-            Answer.setText("Try Again... :(")
-            NextButton.visibility = View.GONE
-            TryAgainButton.visibility = View.VISIBLE
-        }
-        NotClickable()
-        score = round(answered/answers*100)
-        ScoreView.setText(score.toString())
-    }
+    var home: ImageButton
+        get() = findViewById(R.id.buttonHome)
+        set(value) = TODO()
 
     fun Click1(v: View) {
         clicked = 0
@@ -161,7 +187,6 @@ class Vocabulary : AppCompatActivity() {
 
     fun ClickNext(v: View)
     {
-        Answer.setText("")
         NextButton.visibility = View.GONE
         ClickShuffle()
         Clickable()
@@ -169,8 +194,8 @@ class Vocabulary : AppCompatActivity() {
 
     fun ClickTryAgain(v: View)
     {
-        Answer.setText("")
         TryAgainButton.visibility = View.GONE
+        ClickShuffle()
         Clickable()
     }
 
@@ -191,11 +216,12 @@ class Vocabulary : AppCompatActivity() {
         imgButton2.visibility = View.GONE
         imgButton3.visibility = View.GONE
         imgButton4.visibility = View.GONE
-        Answer.setText("")
-        Word.setText("")
+        Word.visibility = View.GONE
         NextButton.visibility = View.GONE
         TryAgainButton.visibility = View.GONE
         NextLevelText.visibility = View.VISIBLE
+        back.visibility = View.VISIBLE
+        home.visibility = View.VISIBLE
     }
 
     fun NotClickable()
@@ -212,5 +238,84 @@ class Vocabulary : AppCompatActivity() {
         imgButton2.isClickable = true
         imgButton3.isClickable = true
         imgButton4.isClickable = true
+    }
+
+    fun goBack(v:  View)
+    {
+        val intent = Intent(this, Levels::class.java)
+        startActivity(intent)
+    }
+
+    fun goHome(v: View)
+    {
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
+    }
+
+    fun ClickShuffle() {
+        var arraySize = Words.size
+        if (arraySize > 0)
+        {
+            pick(Words, WordsEN)
+            Word.setText(WordOL)
+            imgButton1.setText(WordsENrandom[0])
+            imgButton2.setText(WordsENrandom[1])
+            imgButton3.setText(WordsENrandom[2])
+            imgButton4.setText(WordsENrandom[3])
+        }
+        else nextLevel()
+    }
+
+    fun pick(arr1: Array<String>, arr2: Array<String>) {
+        i = (0..((arr1.size)-1)).shuffled().first()
+
+        WordOL = arr1[i]
+        WordEN = arr2[index[i]]
+        var temp = arr2.toList()
+        WordsENrandom = temp.shuffled().take(4).toTypedArray()
+
+        when (WordEN) {
+            !in WordsENrandom -> {
+                i = (0..3).shuffled().first()
+                WordsENrandom[i] = WordEN
+            }
+        }
+
+    }
+
+    private fun find(a: String, b: Array<String>): Int {
+        for (x in b.indices) {
+            if (a == b[x]) return x
+        }
+        return -1
+    }
+
+    private fun RemoveString(a: Array<String>) :Array<String>
+    {
+        val temp = a
+        val temp1 = temp.toList().take(i) + temp.toList().takeLast(a.size-i-1)
+        return temp1.toTypedArray()
+    }
+
+    private fun RemoveInt(a: IntArray) :IntArray
+    {
+        val temp = a
+        val temp1 = temp.toList().take(i) + temp.toList().takeLast(a.size-i-1)
+        return temp1.toIntArray()
+    }
+
+    fun Click() {
+        var guess = WordsENrandom[clicked]
+        if (guess == WordEN) {
+            i = find(WordOL, Words)
+            Words = RemoveString(Words)
+            index = RemoveInt(index)
+            TryAgainButton.visibility = View.GONE
+            NextButton.visibility = View.VISIBLE
+        } else {
+            NextButton.visibility = View.GONE
+            TryAgainButton.visibility = View.VISIBLE
+        }
+        NotClickable()
     }
 }

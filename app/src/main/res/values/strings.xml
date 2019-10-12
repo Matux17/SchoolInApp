@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">School in App</string>
+    <string-array name="languages">
+        <item>Lithuanian</item>
+        <item>Polish</item>
+        <item>Turkish</item>
+        <item>Albanian</item>
+    </string-array>
+    <string name="ToQuestions">If you have read all text and remember the content, please press button next.</string>
+    <string name="LevelCompleted">Congratulations! You have answered all questions correctly. Press button "Back" and
+        choose next level or press "Home" and do exercises later
+    </string>
+    <string name="LevelFailed">Uh oh! It looks like you made some mistakes. But don\'t worry, just press button "Back"
+        and repeat the level
+    </string>
+    <string name="TCInfo">Hi! Now you will have the text which you need to read. After that, press next and answer to given questions. Be aware! Once you click an answer, other question will be shown, so think before doing. Good luck!
+    </string>
+    <string name="creditsSpecialThanks">Coffee\nstackoverflow.com\nSpotify\nTeachers</string>
+    <string name="creditsErasmus">This mobile App was developed by students from Lithuania, North Macedonia, Poland and Turkey as a part of Erasamus+ project 2018–1–LT01–KA229–047029_1</string>
 </resources>

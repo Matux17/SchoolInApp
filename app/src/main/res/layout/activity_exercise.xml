@@ -9,8 +9,8 @@
         android:background="@drawable/background">
 
     <ImageButton
-            android:layout_width="125dp"
-            android:layout_height="50dp"
+            android:layout_width="140dp"
+            android:layout_height="40dp"
             android:background="@android:color/transparent"
             android:scaleType="fitXY"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -32,8 +32,8 @@
     />
 
     <ImageButton
-            android:layout_width="125dp"
-            android:layout_height="50dp"
+            android:layout_width="140dp"
+            android:layout_height="40dp"
             android:background="@android:color/transparent"
             android:scaleType="fitXY"
             app:layout_constraintLeft_toLeftOf="parent"

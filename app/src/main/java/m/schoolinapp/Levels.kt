@@ -1,8 +1,8 @@
 package m.schoolinapp
 
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import android.view.View
 
 /*
@@ -35,16 +35,17 @@ class Levels : AppCompatActivity() {
     }
 
     fun btLevelThree(v: View) {
-        //lvl.setLvl(3)
-        //ChooseExercise(v)
+        lvl.setLvl(3)
+        ChooseExercise(v)
     }
 
     fun btLevelFour(v: View) {
-        //lvl.setLvl(4)
-        //ChooseExercise(v)
+        lvl.setLvl(4)
+        ChooseExercise(v)
     }
 
     fun btLevelFive(v: View) {
-
+        lvl.setLvl(5)
+        ChooseExercise(v)
     }
 }

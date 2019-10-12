@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background">
+
+<android.support.constraint.ConstraintLayout
+
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Credits"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="50dp">
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="Credits"
+            android:textSize="28sp"
+            android:layout_marginTop="50sp"
+            android:textStyle="bold"
+            android:fontFamily="cursive"
+            android:id="@+id/CreditsView"/>
+
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/CreditsView"
+            android:layout_marginTop="30dp"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:text="PROGRAMMING"
+            android:id="@+id/first"/>
+
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/first"
+            android:layout_marginTop="10dp"
+            android:textSize="16sp"
+            android:textAlignment="center"
+            android:text="Matas Stonys\nMykolas Šleževičius"
+            android:id="@+id/second"/>
+
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/second"
+            android:layout_marginTop="30dp"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:text="DESIGN"
+            android:id="@+id/third"/>
+
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/third"
+            android:layout_marginTop="10dp"
+            android:textSize="16sp"
+            android:textAlignment="center"
+            android:text="Gabija Zelionkaitė\nTitas Perskaudas"
+            android:id="@+id/fourth"/>
+
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fourth"
+            android:layout_marginTop="30dp"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:text="WEB"
+            android:id="@+id/fifth"/>
+
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fifth"
+            android:layout_marginTop="10dp"
+            android:textSize="16sp"
+            android:textAlignment="center"
+            android:text="Gvidas Ulozevičius"
+            android:id="@+id/sixth"/>
+
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sixth"
+            android:layout_marginTop="30dp"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:text="TEXTS"
+            android:id="@+id/seventh"/>
+
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/seventh"
+            android:layout_marginTop="10dp"
+            android:textSize="16sp"
+            android:textAlignment="center"
+            android:text="Goda Vadeikytė\nJonas Jonikas"
+            android:id="@+id/eighth"/>
+
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/eighth"
+            android:layout_marginTop="30dp"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:text="MUSIC"
+            android:id="@+id/nineth"/>
+
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nineth"
+            android:layout_marginTop="10dp"
+            android:textSize="16sp"
+            android:textAlignment="center"
+            android:text="Simonas Šleinius"
+            android:id="@+id/tenth"/>
+
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tenth"
+            android:layout_marginTop="30dp"
+            android:textStyle="bold"
+            android:textSize="22sp"
+            android:textAlignment="center"
+            android:text="SPECIAL THANKS"
+            android:id="@+id/eleventh"/>
+
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/eleventh"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="25dp"
+            android:textSize="18sp"
+            android:textAlignment="center"
+            android:text="@string/creditsSpecialThanks"
+            android:id="@+id/twelveth"/>
+
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/twelveth"
+            android:layout_marginTop="40dp"
+            android:textSize="18sp"
+            android:textAlignment="center"
+            android:text="@string/creditsErasmus"
+            android:id="@+id/thirteenth"/>
+
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/thirteenth"
+            android:layout_marginTop="40dp"
+            android:textSize="18sp"
+            android:textAlignment="center"
+            android:text=""
+            android:id="@+id/fourteenth"/>
+
+</android.support.constraint.ConstraintLayout>
+</ScrollView>
